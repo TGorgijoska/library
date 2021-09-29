@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;600&display=swap');
+:root{
+    --color-purple-100:hsl(280, 43%, 93%);
+    --color-purple-300:hsl(280, 43%, 73%);
+    --color-purple-400:hsl(280, 43%, 63%);
+    --color-purple-500:hsl(280, 43%, 53%);
+    --color-purple-600:hsl(280, 43%, 43%);
+    --color-purple-900:hsl(280, 43%, 23%);
+    
+    --font-family:'Roboto Mono', monospace;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: var(--font-family);
+    background-color: hsl(219, 100%, 99%);
+}
+button{
+    font-family: var(--font-family);
+}
+/* --- HEADER --- */
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+    align-items: center;
+    color: var(--color-purple-900);
+}
+.header button{
+    height: 50px;
+}
+.header__title{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+    box-shadow: 0 2px 0 0 var(--color-purple-100);
+}
+.header__title h1{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px var(--color-purple-100);
+}
+.logo{
+    width: 45px;
+    height: 45px;
+    margin-right: 1em;
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 1px solid var(--color-purple-100);
+}
+/* --- BOOK CARD --- */
+.book-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1em;
+    margin: 2em;
+}
+
+.card{
+    position: relative;
+    min-height: 200px;
+    background-color: #fff;
+    padding: 1em;
+    box-shadow: 
+    4px 2px 0 0 var(--color-purple-400),
+    -4px -2px 0 0 var(--color-purple-900);
+}
+.title{
+    padding-right: 1em;
+    font-weight: 600;
+    text-shadow: 2px 2px var(--color-purple-100);
+    color: var(--color-purple-600);
+    border-bottom: 1px solid black;
+}
+.removeBtn{
+    position: absolute;
+    top:-10px;
+    right: 5px;
+}
+
+/* --- MODAL ----- */
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 500px;
+    margin-left: -150px;
+    margin-top: -250px;
+    visibility: visible;
+    padding: 2em;
+    background-color: hsl(0, 0%, 96%);
+    box-shadow: 0 0 0 100vh hsla(0, 0%, 50%, 0.5);
+    border-radius: 10px;
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 0 auto;
+    
+}
+.form__item{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    border-left: 1px solid var(--color-purple-400);
+}
+label {
+    padding: 0 0 10px 10px;
+    text-shadow: 1px 1px var(--color-purple-100);
+}
+input, select{
+    outline: none;
+    width: 200px;
+    height: 25px;
+    margin-left: 1em;
+    padding: 1em;
+    border: 1px solid var(--color-purple-400);
+}
+input:hover, select:hover{
+    border: 1px solid var(--color-purple-600);
+    box-shadow: 2px 2px 0 0 var(--color-purple-300);
+    
+}
+input:focus, select:focus{
+    border: 1px solid var(--color-purple-600);
+    box-shadow: 2px 2px 0 0 var(--color-purple-300);
+    
+}
+option{
+    background-color: var(--color-purple-100);
+}
+
+.disable{
+    visibility: hidden;
+}
+
+.form__close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.btn{
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    margin: 0.8em 0;
+    font-size: 1em;
+    background-color: var(--color-purple-300);
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 0 var(--color-purple-900);
+}
+.btn:hover{  
+    box-shadow: -2px -2px 0 var(--color-purple-900);
+
+}
