@@ -7,6 +7,7 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const read = document.querySelector('#read');
+const removeBtn = document.querySelectorAll('.removeBtn');
 let library = [];
 let newbook;
 
@@ -23,10 +24,6 @@ class Book {
     }
 }
 
-function addBookToLibrary(book) {
-    library.push(book);
-}
-
 const myBook = new Book("HP", "JK.R", "345", "yes");
 addBookToLibrary(myBook);
 
@@ -37,13 +34,10 @@ openModal.addEventListener('click', () => {
 });
 closeModal.addEventListener('click',closeModalForm);
 form.addEventListener('submit', handleForm);
+removeBtn.forEach(btn => btn.addEventListener('click', () => deleteBook(btn.dataset.cardnum)));
 
-function openModalForm() {
-    modal.classList.remove('disable');
-    
-}
-function closeModalForm() {
-    modal.classList.add('disable');
+function addBookToLibrary(book) {
+    library.push(book);
 }
 
 function createBook() {
@@ -54,6 +48,21 @@ function createBook() {
         // formReset();
         closeModalForm();
     }       
+}
+// todo: printBooks(); changeReadStatus()
+
+function printBooks(params) {
+    
+}
+function deleteBook(card) {
+    let div = document.querySelector(`[data-cardnum="${card}"]`);
+    div.parentNode.removeChild(div);
+}
+function openModalForm() {
+    modal.classList.remove('disable');   
+}
+function closeModalForm() {
+    modal.classList.add('disable');
 }
 
 function checkInput(){
