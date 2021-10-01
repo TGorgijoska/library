@@ -65,10 +65,10 @@ button{
     position: relative;
     min-height: 200px;
     background-color: #fff;
-    padding: 1em;
+    padding: 1em 1em 4em 1em;
     box-shadow: 
-    4px 2px 0 0 var(--color-purple-400),
-    -4px -2px 0 0 var(--color-purple-900);
+        4px 2px 0 0 var(--color-purple-400),
+        -4px -2px 0 0 var(--color-purple-900);
 }
 .title{
     padding-right: 1em;
@@ -84,7 +84,7 @@ button{
 }
 .readBtn{
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
 }
 
 /* --- MODAL ----- */
