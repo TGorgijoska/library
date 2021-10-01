@@ -82,6 +82,10 @@ button{
     top:-10px;
     right: 5px;
 }
+.readBtn{
+    position: absolute;
+    bottom: 20px;
+}
 
 /* --- MODAL ----- */
 .modal{
