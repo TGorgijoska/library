@@ -38,7 +38,7 @@
         
         <div class="modal disable">
             <div class="modal__form">
-                <form class="form">
+                <form class="form" id="form">
                     <div class="form__close">
                         <button class="btn" id="close">X</button>
                     </div>
@@ -52,17 +52,17 @@
                     </div>
                     <div class="form__item">
                         <label for="numberOfPages">Number of pages:</label>
-                        <input type="number" name="pages" id="pages" required>
+                        <input type="number" min="0" name="pages" id="pages" required>
                     </div>
                     <div class="form__item">
                         <label for="read">Have you read it?</label>
-                        <select name="read" id="read" required>
+                        <select name="read" id="read">
                             <option value="yes">yes</option>
                             <option value="no" selected>no</option>
                         </select>
                     </div>
                     <div class="form__item--btn">
-                        <button class="btn" id="submit-btn">Add book</button>
+                        <input type="submit" value="Add book" class="btn" id="submit-btn">
                     </div>
                 </form>
             </div>
