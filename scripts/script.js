@@ -8,6 +8,7 @@ const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const read = document.querySelector('#read');
 const removeBtn = document.querySelectorAll('.removeBtn');
+const readBtn = document.querySelectorAll('.readBtn');
 let library = [];
 let newbook;
 
@@ -24,7 +25,9 @@ class Book {
     }
 }
 
-const myBook = new Book("HP", "JK.R", "345", "yes");
+let myBook = new Book("cb", "JK.R", "345", "read");
+addBookToLibrary(myBook);
+myBook = new Book("Abfe", "JK.R", "345", "read");
 addBookToLibrary(myBook);
 
 submitBtn.addEventListener('click', createBook);
@@ -35,6 +38,7 @@ openModal.addEventListener('click', () => {
 closeModal.addEventListener('click',closeModalForm);
 form.addEventListener('submit', handleForm);
 removeBtn.forEach(btn => btn.addEventListener('click', () => deleteBook(btn.dataset.cardnum)));
+readBtn.forEach(btn => btn.addEventListener('click', () => changeReadStatus(btn)));
 
 function addBookToLibrary(book) {
     library.push(book);
@@ -54,9 +58,19 @@ function createBook() {
 function printBooks(params) {
     
 }
+function changeReadStatus(btn) {
+    if(btn.textContent == "read"){
+        btn.textContent = "not read";
+        library[btn.dataset.cardnum].read = "not read";
+    } else {
+        btn.textContent = "read";
+        library[btn.dataset.cardnum].read = "read";
+    }
+}
 function deleteBook(card) {
     let div = document.querySelector(`[data-cardnum="${card}"]`);
     div.parentNode.removeChild(div);
+    delete library[card];
 }
 function openModalForm() {
     modal.classList.remove('disable');   
