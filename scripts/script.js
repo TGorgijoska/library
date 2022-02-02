@@ -1,4 +1,4 @@
-// todo: local storage
+
 const form = document.getElementById("form");
 const submitBtn = document.getElementById('submit-btn');
 const openModal = document.getElementById('addBook');
@@ -115,16 +115,26 @@ function closeModalForm() {
 }
 
 function checkInput(){
-    if(title.value == '' || author.value == '' || pages.value == ''){
-        return false;
+    if(!title.validity.valid){
+        document.getElementById('title-valid').textContent = title.validationMessage;       
     }
-    return true;
+    else return true;
+    if(!author.validity.valid){
+        document.getElementById('author-valid').textContent = author.validationMessage;   
+    }
+    else return true;
+    if(!pages.validity.valid) {
+        document.getElementById('pages-valid').textContent = pages.validationMessage;
+    } 
+    else return true;
 }
 function formReset(){
     title.value = "";
     author.value = "";
     pages.value = "";
     read.value = "not read";
+    // remove validation message 
+    document.querySelectorAll('.valid').forEach(el => el.textContent = '');
 }
 function handleForm(event) { 
     event.preventDefault(); 

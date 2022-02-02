@@ -90,10 +90,10 @@ button{
 /* --- MODAL ----- */
 .modal{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     width: 300px;
-    height: 500px;
+    min-height: 500px;
     margin-left: -150px;
     margin-top: -250px;
     visibility: visible;
@@ -123,7 +123,7 @@ label {
     text-shadow: 1px 1px var(--color-purple-100);
 }
 
-input, select{
+input, select, button[type="submit"]{
     outline: none;
     width: 200px;
     height: 30px;
@@ -144,6 +144,20 @@ input:focus, select:focus{
 
 .disable{
     visibility: hidden;
+}
+
+input:invalid:not(:focus) ~ .valid{
+    display: block;
+    font-size: 0.7em;
+    margin-left: 1em;
+    color: red;
+}
+input:valid{
+    background-color: var(--color-purple-100);
+}
+.valid{ 
+    display:none;
+    transition: 0.5s ease-in;
 }
 
 .form__close{

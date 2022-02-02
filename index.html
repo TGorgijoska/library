@@ -37,15 +37,18 @@
                     </div>
                     <div class="form__item"> 
                         <label for="title">Book title:</label>
-                        <input type="text" id="title" name="title" required>
+                        <input type="text" id="title" name="title" placeholder="ex: Harry Potter" required>
+                        <span class="valid" id="title-valid"></span>
                     </div>
                     <div class="form__item">
                         <label for="author">Author:</label>
-                        <input type="text" name="author" id="author" required>
+                        <input type="text" name="author" id="author" placeholder="ex: J.K. Rowling" required>
+                        <span class="valid" id="author-valid"></span>
                     </div>
                     <div class="form__item">
-                        <label for="numberOfPages">Number of pages:</label>
-                        <input type="number" min="0" name="pages" id="pages" required>
+                        <label for="pages">Number of pages:</label>
+                        <input type="number" min="1" name="pages" id="pages" placeholder="537" required>
+                        <span class="valid" id="pages-valid"></span>
                     </div>
                     <div class="form__item">
                         <label for="read">Have you read it?</label>
@@ -55,7 +58,7 @@
                         </select>
                     </div>
                     <div class="form__item--btn">
-                        <input type="submit" value="Add book" class="btn" id="submit-btn">
+                        <button type="submit" value="Add book" class="btn" id="submit-btn">Add book </button>
                     </div>
                 </form>
             </div>
